@@ -1,0 +1,46 @@
+{
+  "name": "node.js-prisma-sample-backend",
+  "version": "1.0.0",
+  "description": "Template repository for a initial Node.js backend integrated with Prisma",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "npm run prismix && NODE_ENV=production node src/index.js",
+    "dev": "npm run prismix && nodemon src/index.js",
+    "prismix": "npx prismix && prisma format && npx prisma generate",
+    "migrate": "npm run prismix && npx prisma migrate dev --name initial_migration",
+    "seed": "node prisma/seeders/index.js",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Akalanka47000/node.js-prisma-sample-backend.git"
+  },
+  "keywords": [
+    "node",
+    "prisma",
+    "backend"
+  ],
+  "author": "Akalanka Perera",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Akalanka47000/node.js-prisma-sample-backend/issues"
+  },
+  "homepage": "https://github.com/Akalanka47000/node.js-prisma-sample-backend#readme",
+  "dependencies": {
+    "@prisma/client": "^3.12.0",
+    "bcrypt": "^5.0.1",
+    "colors": "^1.4.0",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "jsonwebtoken": "^8.5.1",
+    "prismix": "^1.0.21",
+    "winston": "^3.7.2",
+    "xss-clean": "^0.1.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.13",
+    "prisma": "^3.2.1"
+  }
+}
